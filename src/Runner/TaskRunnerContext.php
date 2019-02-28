@@ -22,11 +22,8 @@ class TaskRunnerContext
     /**
      * @var null|TestSuiteInterface
      */
-    private $testSuite = null;
+    private $testSuite;
 
-    /**
-     * TaskRunnerContext constructor.
-     */
     public function __construct(ContextInterface $taskContext, TestSuiteInterface $testSuite = null)
     {
         $this->taskContext = $taskContext;
@@ -43,7 +40,7 @@ class TaskRunnerContext
         return $this->skipSuccessOutput;
     }
 
-    public function setSkipSuccessOutput(bool $skipSuccessOutput)
+    public function setSkipSuccessOutput(bool $skipSuccessOutput): void
     {
         $this->skipSuccessOutput = $skipSuccessOutput;
     }
@@ -53,18 +50,12 @@ class TaskRunnerContext
         return null !== $this->testSuite;
     }
 
-    /**
-     * @return TestSuiteInterface|null
-     */
-    public function getTestSuite()
+    public function getTestSuite(): ?TestSuiteInterface
     {
         return $this->testSuite;
     }
 
-    /**
-     * @param TestSuiteInterface|null $testSuite
-     */
-    public function setTestSuite(TestSuiteInterface $testSuite)
+    public function setTestSuite(?TestSuiteInterface $testSuite): void
     {
         $this->testSuite = $testSuite;
     }
