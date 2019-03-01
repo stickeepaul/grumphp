@@ -33,6 +33,16 @@ class GrumPHP
         return $this->container->getParameter('git_dir');
     }
 
+    public function getDockerContainerName(): string
+    {
+        return $this->container->getParameter('docker_container');
+    }
+
+    public function getDockerDirectory(): string
+    {
+        return $this->container->getParameter('docker_dir');
+    }
+
     /**
      * @return string|null
      */

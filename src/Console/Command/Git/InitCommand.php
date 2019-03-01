@@ -114,6 +114,8 @@ class InitCommand extends Command
         $replacements = [
             '${HOOK_EXEC_PATH}' => $this->paths()->getGitHookExecutionPath(),
             '$(HOOK_COMMAND)' => $this->generateHookCommand('git:'.$hook),
+            '${DOCKER_CONTAINER}' => $this->paths()->getDockerContainerName(),
+            '${DOCKER_DIR}' => $this->paths()->getDockerDirectory()
         ];
 
         return str_replace(array_keys($replacements), array_values($replacements), $content);

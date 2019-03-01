@@ -126,6 +126,16 @@ class PathsHelper extends Helper
         return $this->getRelativePath($gitDir);
     }
 
+    public function getDockerContainerName(): string
+    {
+        return $this->config->getDockerContainerName();
+    }
+
+    public function getDockerDirectory(): string
+    {
+        return $this->config->getDockerDirectory();
+    }
+
     /**
      * Gets the path from where the command needs to be executed in the GIT hook.
      */
